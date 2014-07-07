@@ -55,6 +55,146 @@
                 </section>
 
                 <section>
+
+                    <section>
+                        <h1>Software Development Process</h1>
+                    </section>
+
+                    <section>
+                        <h2>The V-Model</h2>
+                        <img alt="v-model" style="border-width:0; max-height: none; max-width: none; width: 999px;" src="assets/images/v-model/the-v-model-of-the-systems-engineering-process.svg"></img>
+                        <p style="position: absolute; z-index: 4; left: 376px; top: 518px;" class="absolute-element fragment fade-out"><font color="#000000"><span style="background-color: rgb(255, 255, 255);">Coding　　Unit Test</span></font></p>
+                        <p style="position: absolute; z-index: 4; left: 399px; top: 558px;" class="absolute-element fragment">=&gt; Test-driven development (TDD)</p>
+                    </section>
+
+                    <section>
+                        <h2>Unit Testing</h2>
+                        <p>An unit can be viewed as the smallest testable part of an application</p>
+                        <ul>
+                            <li>An entire <b>interface</b> or an individual <b>method</b> in object-oriented programming</li>
+                            <li>An entire <b>module</b> or an individual <b>function</b>/<b>procedure</b> in procedural programming</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <div style="background-color: rgb(20, 98, 135); width: 100%; height: 1080px; position: absolute; top: -100%; left: -50%; z-index: -1;"></div>
+                        <div>
+                            <div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+                                <p><font color=#FFFFFF><b>Production Code</b></font><br /><br /></p>
+                            </div>
+                            <div style="width: 40%; display: inline-block;">
+                                <p><b>Test Code</b><br /><br /></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+                                <p style="text-align: left; font-size: 60%;"><font style="color: #FFFFFF; font-family: monospace;">
+                                    public int sum(int x, int y) {<br />&nbsp;&nbsp;return x + y;<br />}
+                                </font></p>
+                            </div>
+                            <div style="width: 40%; display: inline-block;">
+                                <p style="text-align: left; font-size: 60%;"><font style="font-family: monospace;">
+                                    public void testSum() {<br />&nbsp;&nbsp;int i = sum(1, 2);<br />&nbsp;&nbsp;assertEquals(i, 3);<br />}
+                                </font></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Testing Methods</h2>
+                        <ul>
+                            <li>White-box testing</li>
+                            <p class="fragment" data-fragment-index="0">The testing code is dedicated for the implementation</p>
+                            <p class="fragment" data-fragment-index="2">Pros:</p>
+                            <ul class="fragment" data-fragment-index="2"><li>Good coverage and implementation checking</li></ul>
+                            <p class="fragment" data-fragment-index="2">Cons:</p>
+                            <ul class="fragment" data-fragment-index="2"><li>High cost</li></ul>
+                            <li>Black-box testing</li>
+                            <p class="fragment" data-fragment-index="1">The testing code is dedicated for the interface</p>
+                            <p class="fragment" data-fragment-index="3">Pros:</p>
+                            <ul class="fragment" data-fragment-index="3"><li>Good for interface checking</li></ul>
+                            <li class="fragment" data-fragment-index="4">Grey-box testing</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Basic Code Coverage Criteria</h2>
+                        <ul>
+                            <li>Function coverage</li>
+                            <li>Statement coverage</li>
+                            <li>Branch coverage</li>
+                            <li>Condition coverage</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2><font style="text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #FFF, 0 0 0.2em #FFF;">Branch Coverage</font></h2>
+
+                        <div style="background-color: rgb(20, 98, 135); width: 100%; height: 1920px; position: absolute; top: -100%; left: -50%; z-index: -1;"></div>
+                        <div>
+                            <div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+                                <p><font color=#FFFFFF><b>Production Code</b></font><br /><br /></p>
+                            </div>
+                            <div style="width: 40%; display: inline-block; vertical-align: top;">
+                                <p><b>Test Code</b><br /><br /></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="width: 40%; display: inline-block; margin-right: 5%; vertical-align: top;">
+                                <p style="text-align: left; font-size: 60%;"><font style="color: #FFFFFF; font-family: monospace;">
+                                    public int max(int x, int y) {<br /><font class="fragment highlight-current-green" data-fragment-index="0">&nbsp;&nbsp;if (x &gt; y)<br />&nbsp;&nbsp;&nbsp;&nbsp;return x;<br /></font><font class="fragment highlight-current-green" data-fragment-index="2">&nbsp;&nbsp;else<br />&nbsp;&nbsp;&nbsp;&nbsp;return y;<br /></font>}
+                                </font></p>
+                            </div>
+                            <font class="fragment" data-fragment-index="1"></font>
+                            <div style="width: 40%; display: inline-block; vertical-align: top;">
+                                <p style="text-align: left; font-size: 60%;"><font style="font-family: monospace;">
+                                    public void testMax() {<br />&nbsp;&nbsp;int i = <font class="fragment highlight-current-red" data-fragment-index="0">max(2, 1)</font>;<br />&nbsp;&nbsp;assertEquals(i, 2);<br />&nbsp;&nbsp;i = <font class="fragment highlight-current-red" data-fragment-index="2">max(6, 9)</font>;<br />&nbsp;&nbsp;assertEquals(i, 99);<br />}
+                                </font></p>
+                            </div>
+                        </div>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Building an Unit Testing Environment</h1>
+                    </section>
+                    <section>
+                        <h2>Software Requirement</h2>
+                        <ul>
+                            <li>JDK</li>
+                            <li>Android SDK</li>
+                            <li>Android Studio (IDE)</li>
+                            <li>Genymotion (emulator)</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Writing Test Cases</h1>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Testing Tools</h1>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Robolectric</li>
+                            <p>Wouldn’t it be nice to run your Android tests directly from inside your IDE?</p>
+                            <li>uiautomator</li>
+                            <p>Automated functional UI test cases</p>
+                            <li>MonkeyTalk</li>
+                            <p>Capture and replay the test cases</p>
+                            <li class="fragment">CTS</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
                     <h1>Q & A</h1>
                 </section>
             </div>
